@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rtpReferencia" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d1c63b2b-e1c0-4faa-a670-be76deaf33aa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="74"/>
+	<property name="ireport.callouts" value="##Fri Nov 22 10:17:58 VET 2013"/>
+	<field name="banco" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="user_caja" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="monto" class="java.lang.Float"/>
+	<field name="logo" class="java.io.InputStream"/>
+	<field name="user_sistema" class="java.lang.String"/>
+	<field name="id_conciliacion" class="java.lang.String"/>
+	<variable name="suma" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{monto}]]></variableExpression>
+	</variable>
+	<group name="conciliacion">
+		<groupExpression><![CDATA[$F{id_conciliacion}]]></groupExpression>
+		<groupHeader>
+			<band height="51">
+				<rectangle>
+					<reportElement uuid="3431390f-5023-45e1-8183-5ec7371b41ad" x="0" y="3" width="555" height="20" backcolor="#E7E7E7"/>
+				</rectangle>
+				<staticText>
+					<reportElement uuid="0b9d632d-3cbe-44ec-a5e7-e95dad2517e9" x="10" y="3" width="154" height="20" forecolor="#000066"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Conciliacion Numero]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="4c06a03c-7dad-4d14-9185-e59c5c0114eb" x="178" y="3" width="138" height="20" forecolor="#CC0000"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_conciliacion}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement uuid="7e7e2ad9-b46b-4912-abb1-5ee667b018d2" x="0" y="27" width="555" height="21" backcolor="#FFFFFF"/>
+				</rectangle>
+				<staticText>
+					<reportElement uuid="4b4fb2fb-d668-43c8-938f-c2ab42628506" x="10" y="28" width="78" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Banco]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="d350a82b-b468-405d-a2d2-05b521a8e781" x="92" y="28" width="84" height="20"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Referencia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9607fcad-d2d2-44fb-b43b-8ad3dd85c6dd" x="184" y="28" width="52" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cajero]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="3856a161-ce9a-4ed3-b8d8-2680322e5465" x="301" y="28" width="70" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="54713657-59ec-426d-92bd-fb6a6a853e2b" x="389" y="28" width="67" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="92f0b482-c754-4c98-b509-b8d8a7f69151" x="478" y="28" width="67" height="20"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Monto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7e975a86-a27d-436a-91d3-1947fc9dc3b6" x="238" y="28" width="53" height="20"/>
+					<textElement>
+						<font size="12" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[User]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="27">
+				<line>
+					<reportElement uuid="21237f0b-d426-45df-b611-9269d3fcb5f8" x="0" y="8" width="555" height="1"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="171" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="e7e52850-36a8-466c-b34e-142151db72c9" mode="Opaque" x="4" y="10" width="548" height="20" forecolor="#FFFFFF" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="500a9443-5e14-4625-bf47-db9e7ad8083f" x="81" y="43" width="397" height="94"/>
+				<imageExpression><![CDATA[$F{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="1d76ee1c-9d7b-41bd-878e-9b0f0bd41949" x="10" y="137" width="354" height="30" forecolor="#000066"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Referencias Bancarias]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="bc83160b-9c37-48b4-96b2-855b50a30a0d" mode="Transparent" x="4" y="10" width="548" height="20"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="6" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="11" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="0c600d92-e6b0-49b2-8cf1-c534c8800582" mode="Opaque" x="4" y="7" width="548" height="20" backcolor="#EFEDED">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="c49a0a02-aa17-4f07-9942-88c33af83406" mode="Transparent" x="10" y="10" width="78" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{banco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="64f497e2-c01d-4e71-a720-243b4589e859" x="92" y="10" width="84" height="20" forecolor="#000066"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4dfee26c-9a16-4282-8b65-ddbec91cf0b1" x="186" y="9" width="43" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{user_caja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f4345151-e7e4-42e8-85e2-2be63d133796" x="301" y="9" width="63" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="1a870c43-9ce3-4eab-a07f-5e0aa0f2c1c8" x="478" y="9" width="67" height="20" forecolor="#000066"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d599840b-5e88-448c-965b-d08d3a3493a8" x="389" y="9" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b16ab325-4e70-4c0c-a6f6-515cc6051080" x="238" y="9" width="53" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{user_sistema}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="49" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="ffbeffd2-c3bd-4bcf-b61b-b8c1cca1d6e3" x="0" y="21" width="555" height="20" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="fcfc1c8f-26bc-4c7b-a7b7-e79d03dcfb89" x="468" y="24" width="41" height="20" forecolor="#000033"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Pag]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="11f69216-067b-41ee-baec-c11c67eb83f3" x="522" y="24" width="23" height="20" forecolor="#000033"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c5952815-8f18-4fd9-8a16-96afecbd9124" x="91" y="24" width="47" height="18" forecolor="#000033"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6f7702d5-ccc5-4009-8218-e8caa601fd6b" x="4" y="24" width="84" height="20" forecolor="#000033"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total registros]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="83cbac2b-af3f-44a8-9c2f-bfbb8b70e517" x="4" y="22" width="55" height="20" forecolor="#000033"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recaudo]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8fa3a8ea-64e5-4560-ae4e-5f32624b51bf" x="456" y="22" width="89" height="20" forecolor="#000033"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{suma}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="3fba2638-624d-417d-9e54-a4a6d73c417b" x="0" y="17" width="552" height="2"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

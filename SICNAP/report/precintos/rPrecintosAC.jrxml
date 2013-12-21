@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rContratosAC" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c507f31-cf34-4277-825f-6fb610f5ee55">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="promotor" class="java.lang.String"/>
+	<field name="precinto" class="java.lang.String"/>
+	<field name="fecha_registro" class="java.lang.String"/>
+	<field name="abonado" class="java.lang.String"/>
+	<field name="boxy" class="java.lang.String"/>
+	<field name="estatus" class="java.lang.String"/>
+	<field name="logo" class="java.io.InputStream"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="159" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="0261477d-60ea-4f1f-a752-24f67178d290" x="16" y="0" width="539" height="20" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="47dcbedc-b130-4231-aaad-0351d50fc771" x="16" y="127" width="354" height="30" forecolor="#000066"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Precintos por Ente/Tecnico]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="bfde95f0-862b-40e0-a56e-484b7929d9e1" x="94" y="35" width="370" height="92"/>
+				<imageExpression><![CDATA[$F{logo}]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="952b0c0b-c7d7-4f3a-b4e6-42ac1aac8bd1" mode="Opaque" x="29" y="1" width="512" height="19" forecolor="#FFFFFF" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="cda98d42-d86b-4b7d-a7b4-96201e1b38ed" x="16" y="9" width="525" height="53" backcolor="#666666"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="deab8348-cd00-4c6a-9217-c394b802ae87" x="29" y="17" width="181" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PPB = Por Precesar en Boxy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cc9afbc6-61fa-463d-95e4-b123d6dfd0c1" x="30" y="36" width="196" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PEB = Proceso Exitoso en Boxy]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="a3db8632-f999-41b9-9566-8c181dfe8523" x="16" y="10" width="525" height="21" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="9e2d5217-f4bf-4e80-9ce1-b6be837f17f0" x="29" y="10" width="121" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ente-Tecnico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cbd4f256-9f09-4d2b-82e9-42bf3dd64515" x="201" y="11" width="85" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precinto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2c94a434-8a9a-46c2-ba70-86114569d4dc" x="305" y="11" width="105" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Asignacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8b7b2220-142b-4c6b-8a3e-2f7e300c4b22" x="423" y="10" width="41" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Boxy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc3cbd6c-cf00-461c-91e4-b3f5a3a703d4" x="486" y="11" width="55" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estatus]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="ac9eebbc-53fd-41cc-bea5-b094ee662178" x="16" y="2" width="525" height="20" backcolor="#EFEDED">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="658a45c7-1624-4138-a279-ec77f0fba418" x="29" y="2" width="172" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{promotor}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c576275f-cf9b-49cc-81c3-519ca27e354b" x="201" y="2" width="85" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{precinto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0f0ea5b5-c6a6-4321-a92b-a7012abe43a4" x="305" y="2" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha_registro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="52382405-a2d2-4270-9d32-d615f07a1b46" x="426" y="2" width="60" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{boxy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7f84fc56-45ff-4d1e-b386-360a093bba7b" x="486" y="2" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{estatus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="4c5d6c5f-626d-4145-bae2-53450412c8e5" x="16" y="11" width="525" height="20" backcolor="#CCCCCC"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="4c55230b-8056-491d-89b5-25b15f40ff77" x="518" y="12" width="23" height="20" forecolor="#000033"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6fc07d8e-3ea6-4b05-aaa5-38a51be5c3f0" x="474" y="11" width="41" height="20" forecolor="#000033"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Pag]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
